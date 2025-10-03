@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dj7vr8hq0dgxh"]
+
+[ext_resource type="Script" uid="uid://d3kk74kcufh4x" path="res://objs/platform/platform.gd" id="1_8fw34"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1yxyn"]
+size = Vector3(5, 0.5, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cg1pt"]
+size = Vector3(5, 0.5, 2)
+
+[node name="platform" type="StaticBody3D"]
+script = ExtResource("1_8fw34")
+
+[node name="collision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_1yxyn")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_cg1pt")

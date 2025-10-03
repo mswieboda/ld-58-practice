@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://c7whyevruygfq"]
 
-[ext_resource type="Script" uid="uid://n8bbg7f2vtnm" path="res://scenes/world.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://ga0j1k060ypk" path="res://objs/player/player.tscn" id="1_nnsk1"]
 [ext_resource type="Script" uid="uid://cwrgjg5roo6ma" path="res://scenes/camera.gd" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://dj7vr8hq0dgxh" path="res://objs/platform/platform.tscn" id="4_71j4m"]
 [ext_resource type="PackedScene" uid="uid://c17e7ny0b65ei" path="res://objs/pause_menu/pause_menu.tscn" id="4_k0juu"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e5uuo"]
@@ -14,7 +14,6 @@ size = Vector2(20, 5)
 albedo_color = Color(0.18431373, 0.22745098, 0, 1)
 
 [node name="world" type="Node3D"]
-script = ExtResource("1_4wyf3")
 
 [node name="PauseMenu" parent="." instance=ExtResource("4_k0juu")]
 
@@ -38,4 +37,9 @@ mesh = SubResource("PlaneMesh_nnsk1")
 surface_material_override/0 = SubResource("StandardMaterial3D_rwgxs")
 
 [node name="player" parent="." instance=ExtResource("1_nnsk1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.199, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.84713, 1.199, 0)
+
+[node name="platforms" type="Node3D" parent="."]
+
+[node name="platform" parent="platforms" instance=ExtResource("4_71j4m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3224983, 0)
