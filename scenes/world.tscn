@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7whyevruygfq"]
+[gd_scene load_steps=6 format=3 uid="uid://c7whyevruygfq"]
 
 [ext_resource type="PackedScene" uid="uid://ga0j1k060ypk" path="res://objs/player/player.tscn" id="1_nnsk1"]
+[ext_resource type="Script" uid="uid://cwrgjg5roo6ma" path="res://scenes/camera.gd" id="2_rwgxs"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e5uuo"]
 
@@ -25,7 +26,9 @@ mesh = SubResource("PlaneMesh_nnsk1")
 surface_material_override/0 = SubResource("StandardMaterial3D_rwgxs")
 
 [node name="player" parent="." instance=ExtResource("1_nnsk1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1991079, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.199, 0)
 
-[node name="camera" type="Camera3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 0.95655954, 0.29153708, 0, -0.29153708, 0.95655954, 0, 0.86563396, 2.3970237)
+[node name="camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.95655954, 0.29153708, 0, -0.29153708, 0.95655954, 0, 2.0646338, 2.3970237)
+script = ExtResource("2_rwgxs")
+player_path = NodePath("../player")
