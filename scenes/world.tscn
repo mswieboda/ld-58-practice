@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7whyevruygfq"]
+
+[ext_resource type="PackedScene" uid="uid://ga0j1k060ypk" path="res://objs/player/player.tscn" id="1_nnsk1"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e5uuo"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nnsk1"]
+size = Vector2(20, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rwgxs"]
+albedo_color = Color(0.18431373, 0.22745098, 0, 1)
+
+[node name="world" type="Node3D"]
+
+[node name="light" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.58294576, 0.8125111, 0, -0.8125111, 0.58294576, 0, 17.51118, 12.388486)
+
+[node name="ground" type="StaticBody3D" parent="."]
+
+[node name="collision" type="CollisionShape3D" parent="ground"]
+shape = SubResource("WorldBoundaryShape3D_e5uuo")
+
+[node name="mesh" type="MeshInstance3D" parent="ground"]
+mesh = SubResource("PlaneMesh_nnsk1")
+surface_material_override/0 = SubResource("StandardMaterial3D_rwgxs")
+
+[node name="player" parent="." instance=ExtResource("1_nnsk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1991079, 0)
+
+[node name="camera" type="Camera3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 0.95655954, 0.29153708, 0, -0.29153708, 0.95655954, 0, 0.86563396, 2.3970237)
