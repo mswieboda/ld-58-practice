@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cexdy8g5e0iyk"]
+[gd_scene load_steps=3 format=3 uid="uid://cexdy8g5e0iyk"]
 
 [ext_resource type="Script" uid="uid://bwfxihy33e4ss" path="res://scenes/main_menu.gd" id="1_l6cm7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l6cm7"]
+font_size = 72
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -24,16 +27,20 @@ offset_right = 4.0
 offset_bottom = 23.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 8
 alignment = 1
 
 [node name="title" type="Label" parent="vbox"]
 layout_mode = 2
 text = "LD 58 Practice"
+label_settings = SubResource("LabelSettings_l6cm7")
 
 [node name="start" type="Button" parent="vbox"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 36
 text = "start"
 
 [node name="quit" type="Button" parent="vbox"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 36
 text = "quit"
